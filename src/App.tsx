@@ -1,28 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
+import CepInput from './Components/CepInput/CepInput';
 
 function App() {
+  const [cep, setCep] = useState('');
+
+  const handleCepChange = (value: string) => {
+    setCep(value);
+  };
+
   return (
-    <div className="App">
-      <Router>
-         <Navbar />
-        </Router>
+    <div className={`App ${cep ? 'dark-background' : ''}`}>
+   <Router>
+        <Navbar />
+      </Router>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h3> Consulta de CEP</h3>
+      <CepInput value={cep} onChange={handleCepChange} />
       </header>
     </div>
   );
