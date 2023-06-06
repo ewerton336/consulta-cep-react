@@ -7,13 +7,13 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Inicio</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/">Sobre</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/">Contato</Link>
         </li>
       </ul>
     </nav>
